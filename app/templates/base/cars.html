@@ -1,0 +1,26 @@
+{% extends 'jinja/admin.html' %}
+
+{% block title %}
+    Cars
+{% endblock title %}
+
+{% block main %}
+
+  <section>
+      <div class="container">
+          {% for row in elements %}
+          <div class="column">
+              {% for column in row %}
+              <div class="columns">
+                  <p>hello</p>
+              </div>
+              {% endfor %}
+          </div>
+ {% endfor %}
+        </div>
+  </section>
+
+
+
+    
+{% endblock main %}

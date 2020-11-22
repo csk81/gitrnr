@@ -1,0 +1,11 @@
+.wraps{
+    width: 1000px;
+    margin:auto;
+    margin-top: 100px;
+}
+.cards{
+    width: 300px;
+    background-color: white;
+    text-align: center;
+    float: left;
+}

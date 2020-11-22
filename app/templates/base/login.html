@@ -1,0 +1,45 @@
+{% extends 'jinja/admin.html' %}
+
+
+{% block title %}
+    login
+{% endblock title %}
+
+
+{% block main %}
+    
+
+    <!--NAVBAR DEFAULT-->
+    <div class="topnav">
+        <ul>
+            <li><a href=""><i class="fa fa-home fa-1x" aria-hidden="true"></i>
+            Home</a></li>
+            <li><a href=""><i class="fa fa-phone fa-1x" aria-hidden="true"></i>
+            Contact Us</a></li>
+            <li><a href=""><i class="fa fa-user fa-1x"></i> About Us</a></li>
+            <li></li>
+            <li class="user"></li>
+        </ul>
+    </div>
+    <!-- form page -->
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+
+            <!-- Login Form -->
+            <form>
+                <h2 style="color: #ffc001;">Login</h2>
+                <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                <a href="/"> <input type="submit" class="fadeIn fourth" value="Log In"></a>
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">admin?</a>
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock main %}

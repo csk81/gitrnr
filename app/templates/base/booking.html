@@ -1,0 +1,46 @@
+{% extends 'jinja/admin.html' %}
+
+{% block title %}
+    Booking
+{% endblock title %}
+
+{% block main %}
+    
+    <!--NAVBAR DEFAULT-->
+    <div class="topnav">
+        <ul>
+            <li><a href=""><i class="fa fa-home fa-1x" aria-hidden="true"></i>
+            Home</a></li>
+            <li><a href=""><i class="fa fa-phone fa-1x" aria-hidden="true"></i>
+            Contact Us</a></li>
+            <li><a href=""><i class="fa fa-user fa-1x"></i> About Us</a></li>
+            <li></li>
+            <li class="user"></li>
+        </ul>
+    </div>
+    <!-- form page -->
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+
+            <!-- Login Form -->
+            <h3 style="font-size: xx-large; color:#ffc001; font-weight:70px;">    Rent N Ride!</h3>
+
+            <form>
+                <input type="text" id="firstname" class="fadeIn first" name="pickuploc" placeholder="Pick-up Point">
+				<input type="text" id="secondname" class="fadeIn first" name="droploc" placeholder="Drop Point">
+				<label for="login"><h6>Pick up Date</h6></label>
+				<input type="date" id="login" class="fadeIn second" name="pickupdate" placeholder="pick Up">
+				<label for="login"><h6>drop  Date</h6></label>
+                <input type="date" id="login" class="fadeIn second" name="dropdate" placeholder="Drop date">
+                
+                <a href="/login"><button type="button" class="submit-btn">Submit</button></a>
+            </form>
+
+            <!-- Remind Passowrd -->
+        
+
+        </div>
+    </div>
+
+    {% endblock main %}
