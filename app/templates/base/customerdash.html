@@ -88,7 +88,13 @@
       color: #ffffff;
 
   }
-    </style>
+
+    .car {
+        color: white;
+        outline: none;
+        border: none;
+    }
+</style>
     <div class="topnav">
       <ul>
           <li><a href=""><i class="fa fa-home fa-1x" aria-hidden="true"></i>
@@ -101,86 +107,32 @@
       </ul>
   </div>
   <div class="row">
-    <div class="col-lg-3">
-      <div class="card">
-        <img src="{{ a }}" alt="toyota glanza" style="width:100%">
-        <h1>toyota glanza</h1>
-        <p class="price">500rs per day</p>
-        <p>transmission:automatic</p>
-        <p>Fule:petrol</p>
-        <p><button>Book Now</button></p>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img src="{{ b }}" alt="suzuki swift" style="width:100%">
-        <h1>suzuki swift</h1>
-        <p class="price">500rs per day</p>
-        <p>transmission:manual</p>
-        <p>fule:petrol</p>
-        <p><button>Book Now</button></p>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img src="{{ c }}" alt="ford ecosport" style="width:100%">
-        <h1>ford ecosport</h1>
-        <p class="price">700rs per day</p>
-        <p>transmission:automatic</p>
-        <p>fule:diesel</p>
-        <p><button>Book Now</button></p>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img src="{{ d }}" alt="hyundai creta" style="width:100%">
-        <h1>hyundai creta</h1>
-        <p class="price">800rs per day</p>
-        <p>transmission:automatic</p>
-        <p>fule:petrol</p>
-        <p><button>Book Now</button></p>
-      </div>
+    {% for car in cars %}
+      
+    
+  <div class="col-lg-3">
+    <form action="/cars" enctype="multipart/form-data">
+    <div class="card">
+      <img src="{{ url_for('static',filename='image/cars/{0}'.format(car[4]))  }}" alt="{{car[0]}}" style="width:100%">
+      <h1 >{{car[0]}}</h1>
+      <p id="p"class="price">Cost : {{car[3]}}</p>
+      <p>fule : {{car[4]}}</p>
+     <a href="/cars"> <button onclick="car();">Book Now</button></a>
     </div> 
   </div>
-  <hr>
-  <div class="row">
-  <div class="col-lg-3">
-    <div class="card">
-      <img src="{{ e }}" alt="maruti 800" style="width:100%">
-      <h1>maruti 800</h1>
-      <p class="price">500rs per day</p>
-      <p>fule:petrol</p>
-      <p><button>Book Now</button></p>
-    </div>
-  </div>
-  <div class="col-lg-3">
-    <div class="card">
-      <img src="{{ f }}" alt="maruti 800" style="width:100%">
-      <h1>maruti 800</h1>
-      <p class="price">500rs per day</p>
-      <p>fule:petrol</p>
-      <p><button>Book Now</button></p>
-    </div>
-  </div>
-  <div class="col-lg-3">
-    <div class="card">
-      <img src="{{ g }}" alt="maruti 800" style="width:100%">
-      <h1>maruti 800</h1>
-      <p class="price">500rs per day</p>
-      <p>fule:petrol</p>
-      <p><button>Book Now</button></p>
-    </div>
-  </div>
-  <div class="col-lg-3">
-    <div class="card">
-      <img src="{{ h }}" alt="maruti 800" style="width:100%">
-      <h1>maruti 800</h1>
-      <p class="price">500rs per day</p>
-      <p>fule:petrol</p>
-      <p><button>Book Now</button></p>
-    </div>
-  </div> 
-</div>
+</form>
+  {% endfor %}
+</div> 
+<script>
+  function car()
+  {
+      var carname = document.getElementById("h1").value;
+      var price = document.getElementById("p").value;
+      localStorage.setItem("price",price)
+      return false;
+  }
+</script>
 </body>
+
 
 </html>

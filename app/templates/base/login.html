@@ -7,12 +7,21 @@
 
 
 {% block main %}
+<style>
+    body{
+        background-image: url("{{url_for ('static',filename = 'image/bg.png') }}");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1300px 600px;
+    }
+</style>
     
 
     <!--NAVBAR DEFAULT-->
     <div class="topnav">
         <ul>
-            <li><a href=""><i class="fa fa-home fa-1x" aria-hidden="true"></i>
+            <li><a href="/"><i class="fa fa-home fa-1x" aria-hidden="true"></i>
             Home</a></li>
             <li><a href=""><i class="fa fa-phone fa-1x" aria-hidden="true"></i>
             Contact Us</a></li>
@@ -36,7 +45,7 @@
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" href="#">admin?</a>
+                <a class="underlineHover" href="/admin">admin?</a>
             </div>
 
         </div>

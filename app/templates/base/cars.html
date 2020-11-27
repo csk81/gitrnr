@@ -1,26 +1,16 @@
-{% extends 'jinja/admin.html' %}
-
-{% block title %}
-    Cars
-{% endblock title %}
-
-{% block main %}
-
-  <section>
-      <div class="container">
-          {% for row in elements %}
-          <div class="column">
-              {% for column in row %}
-              <div class="columns">
-                  <p>hello</p>
-              </div>
-              {% endfor %}
-          </div>
- {% endfor %}
-        </div>
-  </section>
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <h1>carname: <span id="car"></span></h1>
+    <script>
+        document.getElementById("car").innerHTML=localStorage.getItem("price")
+    </script>
     
-{% endblock main %}
+</body>
+</html>
