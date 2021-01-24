@@ -1,10 +1,20 @@
-{% extends 'jinja/admin.html' %}
+{% extends 'jinja/user.html' %}
   
 {% block title %}
     Register
 {% endblock title %}
 
 {% block main %}
+
+<style>
+    body{
+        background-image: url("{{url_for ('static',filename = 'image/bg.png') }}");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1300px 600px;
+    }
+</style>
     <!--NAVBAR DEFAULT-->
     <div class="topnav">
         <ul>
@@ -25,14 +35,14 @@
             <!-- Login Form -->
             <h3 style="font-size: xx-large; color:#ffc001; font-weight:70px;">   Register</h3>
 
-            <form>
+            <form method="POST">
                 <input type="text" id="firstname" class="fadeIn first" name="username" placeholder="username">
                 <input type="text" id="secondname" class="fadeIn first" name="phone" placeholder="phone">
                 <input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
                 <input type="text" id="login" class="fadeIn second" name="drivers-licence" placeholder="drivers-licence">
                 <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
                 <input type="password" id="confrim" class="fadeIn fourth" name="confrim" placeholder="confrim password">
-                <a href="/login"><button type="button" class="submit-btn">Submit</button></a>
+                <a href="/login"><button type="submit" class="submit-btn">Submit</button></a>
             </form>
 
             <!-- Remind Passowrd -->

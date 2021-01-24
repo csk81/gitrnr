@@ -1,0 +1,49 @@
+{% extends 'jinja/user.html' %}
+
+{% block title %}
+    Book
+{% endblock title %}
+
+{% block main %}
+    
+
+
+<style>
+  #container{
+    background-image: url("{{url_for ('static',filename = 'image/cars/{}'.format(cardetails[4])) }}");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+  }
+  
+</style>
+
+<div id="wrapper">
+    <div id="container">
+  
+      <div id="info" >
+          
+
+          <div id="price">
+        </div>
+        
+      </div>
+  
+      <div id="payment">
+        <form action="/booked" method="post">
+            <input type="text" id="firstname" class="fadeIn first" name="pickuploc" placeholder="Pick-up Point">
+            <input type="text" id="secondname" class="fadeIn first" name="droploc" placeholder="Drop Point">
+            <label for="login"><h6 style="color: #ffc001;">Pick up Date</h6></label>
+            <input type="date" id="login" class="fadeIn second" name="pickupdate" placeholder="pick Up">
+            <label for="login"><h6 style="color: #ffc001;">drop  Date</h6></label>
+            <input type="date" id="login" class="fadeIn second" name="dropdate" placeholder="Drop date">
+            <input type="hidden" name="carid" value="{{carid}}" >
+            <button type="submit" class="submit-btn" >Submit</button>
+        </form>
+      </div>
+  
+    </div>
+  </div> 
+
+ 
+  {% endblock main %}

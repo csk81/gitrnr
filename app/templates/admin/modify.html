@@ -1,0 +1,197 @@
+{% extends 'jinja/admin.html' %}
+
+{% block title %}
+  modify
+{% endblock title %}
+
+{% block main %}
+  
+<style>
+    /* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <button type="button" class="btn btn-success float-right" data-toggle="modal"
+                    data-target="#mymodal">ADD</button>
+                <h1>{{user}}</h1>
+                <table class="table table-hover table-light">
+                    <tr>
+                        <th>
+                            id
+                        </th>
+                        <th>
+                            car name
+                        </th>
+                        <th>
+                            fuel
+                        </th>
+                        <th>
+                            transmission
+                        </th>
+                        <th>
+                            price
+                        </th>
+                        <th>
+                            image
+                        </th>
+                    </tr>
+                    {% for row in dat %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+
+                        <td>
+                            <a href="/update/{{row[0]}}" class="btn btn-warning btn-xs" data-toggle="modal"
+                                 data-target="#modaledit{{row[0]}}">edit</a>
+                        </td>
+                        <td>
+                            <a href="/delete/{{row[0]}}" class="btn btn-danger btn-xs"
+                                onclick="return confrim('are you sure to delete?')">delete</a>
+                        </td>
+                    </tr>
+                    <!--- EDIT -->
+                    <div id="modaledit{{row[0]}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title"> Add</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{url_for('update')}}" method="post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="">carname</label>
+                                            <input type="text" class="form-control" name="carname" value="{{row[1]}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">fuel</label>
+                                            <input type="text" class="form-control" name="fuel" value="{{row[2]}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">transmission</label>
+                                            <input type="text" class="form-control" name="transmission" value="{{row[3]}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">price</label>
+                                            <input type="text" class="form-control" name="price" value="{{row[4]}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">image</label>
+                                            <input type="file" accept="image/*" class="form-control" name="image" value="{{row[5]}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" name="carid" value="{{row[0]}}">
+                                            <button class="btn btn-primary" type="submit">update</button>
+                                        </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div id="mymodal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"> Add</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{url_for('insert')}}" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="">name</label>
+                                    <input type="text" class="form-control" name="carname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">fuel</label>
+                                    <input type="text" class="form-control" name="fuel">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">transmission</label>
+                                    <input type="text" class="form-control" name="transmission">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">price</label>
+                                    <input type="text" class="form-control" name="price">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">image</label>
+                                    <input type="file" accept="image/*" class="form-control" name="image">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">ADD</button>
+                                </div>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- nav bar-->
+
+<!-- Side navigation -->
+<div class="sidenav">
+    <a href="#">add/modify</a><i class="fa fa-edit"></i>
+    <a href="/custmorebookings">bookings</a><i class="fa fa-calendar-check"></i>
+    <a href="/viewcust">customers</a><i class="fa fa-users"></i>
+    <a href="/logout">logout</a><i class="fa fa-sign-out-alt"></i>
+  </div>
+  
+  <!-- Page content -->
+  <div class="main">
+    ...
+  </div>
+{% endblock main %}

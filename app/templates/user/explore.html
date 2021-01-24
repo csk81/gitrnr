@@ -1,0 +1,135 @@
+{% extends 'jinja/user.html' %}
+
+
+{% block title %}
+explore
+{% endblock title %}
+
+
+{% block main %}
+
+<div class="box1">
+  <style>
+    .box1 {
+      background-image: url("{{url_for('static',filename='image/10751.jpg')}}");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position-y: bottom;
+      background-size: cover;
+    }
+    .box2-box2 {
+      background-image: url("{{url_for('static',filename='image/10109.jpg')}}");
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-size: cover;
+    }
+    .box4-box1 {
+      background-image: url("{{url_for('static',filename='image/20945933.jpg')}}");
+      background-attachment:scroll;
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-size: cover;
+    }
+
+    .intro{
+      padding: 100px;
+      background-color:#fff;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .intro h2{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-family: bignoodlestitlings;
+      font-style: bold;
+      font-weight: bolder;
+    }
+    .intro p{
+      margin-top: 40px;
+      margin-left: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+    }
+  </style>
+  <div class="box1-box">
+    <h1 style="color:#0d3d56">Rent-N-Ride</h1>
+    <a href="#intro"><button class="h_btn" type="button">Explore</button></a>
+  </div>
+</div>
+<div class="intro">
+  <h2 style="text-decoration: underline;">ABOUT THIS PROJECT</h2>
+  <p>This is a DBMS project which is based on the Flask framework. The flask framework is a built-in development server and a fast debugger. It has an integrated support for unit testing and a Jinja2 templating. It supports for secure cookies and is lightweight. It's modular design helps for a flexible framework. Hence, considering these features of the flask, it's been used in this DBMS project.
+    In this project, the user can access the particular artist, genre, language and the desired type of the music he wishes to.</p>
+  </div>
+
+<div class="box2">
+  <div class="box2-box1">
+    <h2>customer?</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nisi quos sit eaque cum illo ad, tempore voluptate autem veritatis vitae veniam iure, molestiae eum placeat repellat recusandae consectetur quaerat?</p>
+    <a href="/login"><button class="sign-in" type="button">Login/Register</button></a>
+
+  </div>
+  <div class="box2-box2">
+    <h1>Hello</h1>
+  </div>
+</div>
+
+<div class="box4">
+  <div class="box4-box1">
+    <img src="" alt="">
+  </div>
+  <div class="box4-box2">
+    <h2>admin?</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odio est beatae aperiam. Asperiores, sequi? Amet possimus eius aperiam quod accusamus. Amet voluptatem saepe dolor laboriosam ipsam commodi rem voluptatum!</p>
+    <a href="/adminlogin"><button class="sign-in" type="button">Login</button></a>
+
+  </div>
+</div>
+<div class="box3" id="end">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">This site contains bootypull songs </p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/about/">About Us</a></li>
+            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <ul class="social-icons">
+        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="dribbble" href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+</div>
+</div>
+</footer>
+</div>
+{% endblock main %}

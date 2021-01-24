@@ -57,7 +57,7 @@
                         <div class="tab-content">
                             <!-- credit card info-->
                             <div id="credit-card" class="tab-pane fade show active pt-3">
-                                <form role="form">
+                                <form action="/thankyou"role="form" method="POST">
                                     <div class="form-group"> <label for="username">
                                             <h6>Card Owner</h6>
                                         </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
@@ -82,7 +82,9 @@
                                                 </label> <input type="text" required class="form-control"> </div>
                                         </div>
                                     </div>
-                                    <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                    <div class="card-footer"> 
+                                        <input type="hidden" name="carid" value="{{carid}}">
+                                        <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
                                 </form>
                             </div>
                         </div> <!-- End -->

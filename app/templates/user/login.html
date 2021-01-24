@@ -1,4 +1,4 @@
-{% extends 'jinja/admin.html' %}
+{% extends 'jinja/user.html' %}
 
 
 {% block title %}
@@ -36,16 +36,16 @@
 
 
             <!-- Login Form -->
-            <form>
+            <form  method="POST">
                 <h2 style="color: #ffc001;">Login</h2>
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-                <a href="/"> <input type="submit" class="fadeIn fourth" value="Log In"></a>
+                <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" href="/admin">admin?</a>
+                <a class="underlineHover" href="/register">register</a>
             </div>
 
         </div>

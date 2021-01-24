@@ -1,0 +1,52 @@
+{% extends 'jinja/user.html' %}
+
+
+{% block title %}
+    login
+{% endblock title %}
+
+
+{% block main %}
+<style>
+    body{
+        background-image: url("{{url_for ('static',filename = 'image/bg.png') }}");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1300px 600px;
+    }
+</style>
+    
+
+    <!--NAVBAR DEFAULT-->
+    <div class="topnav">
+        <ul>
+            <li><a href="/"><i class="fa fa-home fa-1x" aria-hidden="true"></i>
+            Home</a></li>
+            <li><a href=""><i class="fa fa-phone fa-1x" aria-hidden="true"></i>
+            Contact Us</a></li>
+            <li><a href=""><i class="fa fa-user fa-1x"></i> About Us</a></li>
+            <li></li>
+            <li class="user"></li>
+        </ul>
+    </div>
+    <!-- form page -->
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+
+            <!-- Login Form -->
+            <form  method="POST">
+                <h2 style="color: #ffc001;">write to us</h2>
+                <input type="text" id="review" class="fadeIn second" name="review" placeholder="review">
+                <input type="text" id="brief" class="fadeIn second" name="brief" placeholder="brief">
+                <input type="submit" class="fadeIn fourth" value="submit">
+
+            </form>
+
+            
+
+        </div>
+    </div>
+
+    {% endblock main %}
